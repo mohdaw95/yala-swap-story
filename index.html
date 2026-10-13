@@ -222,6 +222,9 @@
   .face p{font-size:15px;color:var(--ink)}
   @media(prefers-reduced-motion:reduce){.flip button{transition:none}}
 
+  .ticket small{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--berry);display:block;margin-bottom:6px}
+  .ticket b{font-size:clamp(28px,3.6vw,40px);font-weight:900;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+
   /* closing */
   .close .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
   .contact{display:flex;flex-wrap:wrap;gap:28px;margin-top:30px}
@@ -447,31 +450,18 @@
   </div>
 </section>
 
-<!-- SAFE explainer -->
-<section>
-  <div class="wrap reveal">
-    <span class="eyebrow">Understanding the SAFE</span>
-    <h2>In plain words.</h2>
-    <p class="lead">You are not buying shares today. You are buying tomorrow's shares at a price agreed today. Tap a card for the answer.</p>
-    <div class="flips">
-      <div class="flip"><button type="button" aria-expanded="false"><span class="face"><h3>Is this a loan?</h3><small>Tap for the answer</small></span><span class="face back"><p>No. There is no interest and no repayment date. A SAFE converts to ownership. It is not debt.</p><small>Tap to flip back</small></span></button></div>
-      <div class="flip"><button type="button" aria-expanded="false"><span class="face"><h3>Do I own shares today?</h3><small>Tap for the answer</small></span><span class="face back"><p>Not yet. You hold the right to shares. They are issued at the next round, at your capped price.</p><small>Tap to flip back</small></span></button></div>
-      <div class="flip"><button type="button" aria-expanded="false"><span class="face"><h3>Can the cap change on me?</h3><small>Tap for the answer</small></span><span class="face back"><p>No. M is written into your SAFE. Later investors may pay more. You never do.</p><small>Tap to flip back</small></span></button></div>
-    </div>
-    <p class="note">Illustrative only. Not a promise of any outcome.</p>
-  </div>
-</section>
+
 
 <!-- closing -->
 <section class="tint close">
   <div class="wrap reveal">
     <span class="eyebrow">Next chapter</span>
     <h2>Trading things should be as easy as selling them.</h2>
-    <p class="lead">We are looking for partners with idle stock, and investors who see what happens when it is. Tell Mohammed your size and he will hold your seat.</p>
-    <div class="acts">
-      <a class="cta" href="#ask">Request allocation</a>
-      <a class="cta ghost" href="#story">Ask a question</a>
-      <a class="cta ghost" href="#model">Request the financial model</a>
+    <p class="lead">We are raising $500k on one SAFE at a $5M post-money cap. Here is what a seat costs and what it buys.</p>
+    <div class="plats ticket">
+      <div><small>Minimum ticket</small><b>$50k</b><span>on the same SAFE, same cap for every investor</span></div>
+      <div><small>What $100k buys</small><b>2.0%</b><span>of Yala Swap at the $5M cap, converting at the next round</span></div>
+      <div><small>Closing</small><b>30 days</b><span>from the first signature; seats held in order of commitment</span></div>
     </div>
     <div class="contact">
       <div><span>Company</span><b>Yala Swap · <span class="ar">يلا سواب</span></b></div>
@@ -508,10 +498,6 @@
   };
   swaps.addEventListener('input', calc); fee.addEventListener('input', calc); calc();
 
-  // Flip cards.
-  document.querySelectorAll('.flip button').forEach(b => b.addEventListener('click', () => {
-    const open = b.parentElement.classList.toggle('open'); b.setAttribute('aria-expanded', open);
-  }));
 </script>
 
 </body>
