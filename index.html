@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light only">
 <meta name="robots" content="noindex">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light only}body{margin:0;background:#FFFFFF}</style>
 </head>
 <body>
 <title>Yala Swap Investor Story</title>
@@ -21,12 +22,8 @@
     --display:"Mulish",system-ui,sans-serif; --body:"Mulish",system-ui,sans-serif;
     --arabic:"Cairo","Mulish",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
   }
-  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-    --bg:#17121A; --card:#211922; --subtle:#1E171F; --ink:#F6EEF2; --muted:#B8A8B0; --line:#3A2C34; --chip:#2E1F28;
-    --berry:#C94A85; --berry-dark:#A83A6E; --blush:#4A2C3B; --success:#5FBF93; --shadow:0 12px 30px rgba(0,0,0,.35); color-scheme:dark } }
-  :root[data-theme="dark"]{
-    --bg:#17121A; --card:#211922; --subtle:#1E171F; --ink:#F6EEF2; --muted:#B8A8B0; --line:#3A2C34; --chip:#2E1F28;
-    --berry:#C94A85; --berry-dark:#A83A6E; --blush:#4A2C3B; --success:#5FBF93; --shadow:0 12px 30px rgba(0,0,0,.35); color-scheme:dark }
+  :root{color-scheme:light only} }
+
 
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
