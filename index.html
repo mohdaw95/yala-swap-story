@@ -54,6 +54,12 @@
   .cta:hover{background:var(--berry-dark)}
   .cta.ghost{background:transparent;color:var(--berry);border:1.5px solid var(--berry)}
   .cta.ghost:hover{background:var(--chip)}
+  #lang{font-family:var(--arabic);font-weight:800;padding:9px 16px}
+  html[dir="rtl"] body{font-family:var(--arabic)}
+  html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3{font-family:var(--arabic);letter-spacing:0}
+  html[dir="rtl"] .eyebrow,html[dir="rtl"] .note,html[dir="rtl"] .ticket small,html[dir="rtl"] .market small,html[dir="rtl"] .road small,html[dir="rtl"] .team span,html[dir="rtl"] .ask small,html[dir="rtl"] .three small,html[dir="rtl"] .shots figcaption,html[dir="rtl"] .contact div span{font-family:var(--arabic);letter-spacing:0;font-size:13px}
+  html[dir="rtl"] #lang{font-family:var(--body)}
+  html[dir="rtl"] .hero h1{line-height:1.2}
 
   .wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
   section{padding-block:clamp(56px,9vw,120px);border-top:1px solid var(--line)}
@@ -100,6 +106,14 @@
   #mzad .three{grid-template-columns:repeat(3,1fr)}
   #mzad .hero .three{grid-template-columns:1fr 1fr}
   @media(max-width:760px){#mzad .three,#mzad .hero .three{grid-template-columns:1fr}}
+
+  .gains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+  @media(max-width:760px){.gains{grid-template-columns:1fr}}
+  .gains div{background:var(--berry);color:var(--on-berry);border-radius:18px;padding:26px 24px;display:grid;gap:6px;align-content:start}
+  .gains b{font-size:clamp(34px,4.2vw,48px);font-weight:900;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+  .gains small{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blush);font-weight:500}
+  .gains p{font-size:17px;line-height:1.5;color:var(--on-berry);opacity:.92;margin-top:6px}
+  html[dir="rtl"] .gains small{font-family:var(--arabic);letter-spacing:0;font-size:14px}
 
   /* problem */
   .three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
@@ -239,8 +253,8 @@
     .reveal > *{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
     .reveal.in > *{opacity:1;transform:none}
     .reveal.in > *:nth-child(1){transition-delay:.05s}.reveal.in > *:nth-child(2){transition-delay:.15s}.reveal.in > *:nth-child(3){transition-delay:.25s}.reveal.in > *:nth-child(4){transition-delay:.35s}.reveal.in > *:nth-child(5){transition-delay:.45s}.reveal.in > *:nth-child(6){transition-delay:.55s}
-    .three > div,.plats > div,.market > div,.road > div,.team > div,.ask > div,.steps > div,.shots > figure{opacity:0;transform:translateY(22px) scale(.98);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
-    .in .three > div,.in .plats > div,.in .market > div,.in .road > div,.in .team > div,.in .ask > div,.in .steps > div,.in .shots > figure{opacity:1;transform:none}
+    .three > div,.gains > div,.plats > div,.market > div,.road > div,.team > div,.ask > div,.steps > div,.shots > figure{opacity:0;transform:translateY(22px) scale(.98);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+    .in .three > div,.in .gains > div,.in .plats > div,.in .market > div,.in .road > div,.in .team > div,.in .ask > div,.in .steps > div,.in .shots > figure{opacity:1;transform:none}
     .in > * > :nth-child(1){transition-delay:.15s}.in > * > :nth-child(2){transition-delay:.27s}.in > * > :nth-child(3){transition-delay:.39s}.in > * > :nth-child(4){transition-delay:.51s}.in > * > :nth-child(5){transition-delay:.63s}.in > * > :nth-child(6){transition-delay:.75s}
     .shot.reveal,.mzshot{transform:translateY(40px) rotate(2deg)}
     .shot.reveal.in,.in .mzshot{transform:none}
@@ -259,6 +273,7 @@
     <div class="links" id="links">
       <a href="#story">Story</a><a href="#market">Market</a><a href="#product">Product</a><a href="#model">Model</a><a href="#mzad">Mzad Qatar</a><a href="#roadmap">Roadmap</a><a href="#team">Team</a><a href="#ask">The ask</a>
     </div>
+    <button class="cta ghost" id="lang" type="button" aria-label="Switch language">عربي</button>
     <a class="cta" href="#ask">Talk to us</a>
   </div>
 </nav>
@@ -315,9 +330,9 @@
     <h2>Start with Qatar's households. The Gulf and MENA share the habit.</h2>
     <p class="lead">Every household in the region holds idle goods it would trade before it would sell. Three sizes: what we can win in Qatar in three years, the Gulf we open next, and the Arabic-speaking world after that.</p>
     <div class="market">
-      <div><small>SOM · Qatar, 3-year obtainable</small><b>QAR 4M<span style="font-size:.45em;color:var(--muted);font-weight:700"> / yr</span></b><span>100K households · 2 swaps a year · QAR 20 fee</span></div>
-      <div><small>SAM · GCC</small><b>QAR 440M<span style="font-size:.45em;color:var(--muted);font-weight:700"> / yr</span></b><span>11M households across six markets · same product, new market switch</span></div>
-      <div><small>TAM · MENA</small><b>QAR 3.6B<span style="font-size:.45em;color:var(--muted);font-weight:700"> / yr</span></b><span>90M households · Arabic-first from day one</span></div>
+      <div><small>SOM · Qatar, 3-year obtainable</small><b>$1.1M<span style="font-size:.45em;color:var(--muted);font-weight:700"> / yr</span></b><span>100K households · 2 swaps a year · $5.5 fee</span></div>
+      <div><small>SAM · GCC</small><b>$121M<span style="font-size:.45em;color:var(--muted);font-weight:700"> / yr</span></b><span>11M households across six markets · same product, new market switch</span></div>
+      <div><small>TAM · MENA</small><b>$1B<span style="font-size:.45em;color:var(--muted);font-weight:700"> / yr</span></b><span>90M households · Arabic-first from day one</span></div>
     </div>
   </div>
 </section>
@@ -356,11 +371,11 @@
         <div class="cash" style="margin-top:16px">
           <label for="swaps">Accepted swaps a month <output id="swapsOut">2,000</output></label>
           <input type="range" id="swaps" min="100" max="20000" step="100" value="2000">
-          <label for="fee">Fee per accepted swap <output id="feeOut">QAR 20</output></label>
-          <input type="range" id="fee" min="5" max="100" step="5" value="20">
+          <label for="fee">Fee per accepted swap <output id="feeOut">$5</output></label>
+          <input type="range" id="fee" min="1" max="25" step="1" value="5">
         </div>
       </div>
-      <div class="out"><b id="rev">QAR 40,000</b><span>a month · <span id="revYear">QAR 480,000</span> a year · illustrative only</span></div>
+      <div class="out"><b id="rev">$10,000</b><span>a month · <span id="revYear">$120,000</span> a year · illustrative only</span></div>
     </div>
   </div>
 </section>
@@ -386,10 +401,10 @@
       <div><b>+1.42 M</b><span>active users</span></div>
       <div><b>269 M</b><span>ad views a month</span></div>
     </div>
-    <div class="three reveal">
-      <div><small>More listings</small><p>Mzad's 104K new ads a month become swappable on day one. Yala Swap starts with a full marketplace instead of an empty one.</p></div>
-      <div><small>More users</small><p>1.42 million active users get a Swap button on the listings they already use. No new app, no new account.</p></div>
-      <div><small>More visits</small><p>269 million ad views a month, each one a chance to swap. Yala Swap rides the traffic Qatar's biggest marketplace already has.</p></div>
+    <div class="gains reveal">
+      <div><b>+104K</b><small>More listings</small><p>Mzad's 104K new ads a month become swappable on day one. Yala Swap starts with a full marketplace instead of an empty one.</p></div>
+      <div><b>+1.42M</b><small>More users</small><p>1.42 million active users get a Swap button on the listings they already use. No new app, no new account.</p></div>
+      <div><b>+269M</b><small>More visits</small><p>269 million ad views a month, each one a chance to swap. Yala Swap rides the traffic Qatar's biggest marketplace already has.</p></div>
     </div>
   </div>
 </section>
@@ -486,6 +501,27 @@
 <footer>Private and confidential. Prepared by Yala Swap. Please do not forward without written consent.</footer>
 
 <script>
+  // Arabic toggle: swaps every text node through the dictionary and mirrors the page.
+  const AR = {"Story": "القصة", "Market": "السوق", "Product": "المنتج", "Model": "النموذج", "Mzad Qatar": "مزاد قطر", "Roadmap": "خارطة الطريق", "Team": "الفريق", "The ask": "الطلب", "Talk to us": "تواصل معنا", "Swap what you": "بدّل ما", "don't need": "لا تحتاجه", "for what you do.": "بما تحتاجه.", "Yala Swap is Qatar's barter marketplace. List the things sitting idle at home, offer them for the things you want, add cash only if you choose to. Money comes out of the middle.": "يلا سواب هو سوق المقايضة في قطر. اعرض الأشياء المركونة في بيتك، وقدّمها مقابل ما تريده، وأضف مبلغاً نقدياً فقط إن شئت. المال يخرج من المعادلة.", "categories": "فئة", "AR + EN": "عربي + إنجليزي", "native in both": "أصلي باللغتين", "iOS · Android · Web": "iOS · أندرويد · ويب", "The problem": "المشكلة", "Every home is full of things nobody uses.": "كل بيت مليء بأشياء لا يستخدمها أحد.", "A phone two upgrades old. A bike that fits nobody. The sofa from the last flat. Still worth something to someone, never worth the hassle of selling.": "هاتف قديم بجيلين. دراجة لا تناسب أحداً. كنبة من الشقة السابقة. ما زالت تساوي شيئاً لشخص ما، لكنها لا تستحق عناء البيع.", "Selling is work": "البيع عمل شاق", "Pricing, haggling, no-shows, and strangers at the door. For most idle goods the cash is not worth the friction.": "تسعير ومساومة ومواعيد لا تُحترم وغرباء على الباب. بالنسبة لمعظم الأغراض المركونة، المبلغ لا يستحق كل هذا العناء.", "Classifieds assume cash": "الإعلانات المبوبة تفترض النقد", "Every marketplace in the region is built around a price. If you would rather have a thing than the money, there is no place for you.": "كل سوق في المنطقة مبني حول سعر. إن كنت تفضّل غرضاً على المال، فلا مكان لك.", "So it sits there": "فتبقى مركونة", "Cupboards fill, value rots, and the person two streets away who wanted exactly that never finds out.": "تمتلئ الخزائن، وتتآكل القيمة، والشخص الذي يبعد شارعين ويريد هذا الغرض بالذات لا يعرف أبداً.", "The idea": "الفكرة", "If you have what I want and I have what you want, we don't need a price.": "إن كان لديك ما أريده ولديّ ما تريده، فلسنا بحاجة إلى سعر.", "We need each other. Yala Swap makes that match the whole product: items on both sides, an optional cash top-up, and nothing else to argue about.": "نحن بحاجة إلى بعضنا. يلا سواب يجعل هذا التطابق هو المنتج كله: أغراض من الطرفين، ومبلغ نقدي اختياري، ولا شيء آخر للجدال حوله.", "Market · GCC": "السوق · الخليج", "Start with Qatar's households. The Gulf and MENA share the habit.": "نبدأ ببيوت قطر. الخليج والمنطقة العربية يشاركونها العادة.", "Every household in the region holds idle goods it would trade before it would sell. Three sizes: what we can win in Qatar in three years, the Gulf we open next, and the Arabic-speaking world after that.": "كل بيت في المنطقة يحتفظ بأغراض مركونة يفضّل مبادلتها على بيعها. ثلاثة أحجام: ما يمكننا كسبه في قطر خلال ثلاث سنوات، والخليج الذي نفتحه بعدها، ثم العالم الناطق بالعربية.", "SOM · Qatar, 3-year obtainable": "SOM · قطر، قابل للتحقيق في 3 سنوات", "/ yr": "/ سنة", "100K households · 2 swaps a year · $5.5 fee": "100 ألف بيت · مبادلتان في السنة · رسم 5.5 دولار", "SAM · GCC": "SAM · الخليج", "11M households across six markets · same product, new market switch": "11 مليون بيت في ست أسواق · نفس المنتج، مفتاح سوق جديد", "TAM · MENA": "TAM · الشرق الأوسط وشمال أفريقيا", "90M households · Arabic-first from day one": "90 مليون بيت · عربي أولاً من اليوم الأول", "How it works": "كيف يعمل", "Build an offer in under a minute.": "ابنِ عرضك في أقل من دقيقة.", "Pick what you would give, add cash only if you want to, send. No prices to argue about, no message box.": "اختر ما ستقدّمه، أضف مبلغاً إن أردت فقط، ثم أرسل. لا أسعار للجدال، ولا صندوق رسائل.", "Pick your items, then send": "اختر أغراضك ثم أرسل", "List what you have": "اعرض ما لديك", "Photos, a category, a few details. Minutes, not an afternoon.": "صور وفئة وبعض التفاصيل. دقائق، لا ساعات.", "Offer a swap": "قدّم عرض مبادلة", "Up to five of your items for theirs, cash on top only if you choose.": "حتى خمسة من أغراضك مقابل أغراضهم، ومبلغ إضافي فقط إن اخترت.", "Negotiate in terms": "تفاوض بالشروط", "Counter with different items or a different amount. Every change is a revision both sides can see.": "ردّ بأغراض مختلفة أو مبلغ مختلف. كل تغيير هو مراجعة يراها الطرفان.", "Accept and meet": "اقبل والتقِ", "Both numbers unlock the moment an offer is accepted. Meet somewhere public and mark it complete.": "يظهر رقما الطرفين لحظة قبول العرض. التقيا في مكان عام ثم أكّدا الإتمام.", "Business model": "نموذج العمل", "We earn only when a swap actually happens.": "نكسب فقط عندما تتم المبادلة فعلاً.", "Free": "مجاني", "Everything up to the handshake": "كل شيء حتى المصافحة", "Browsing, listing, asking questions, making offers, negotiating. None of it costs the user anything, so the marketplace fills.": "التصفح والعرض والأسئلة وتقديم العروض والتفاوض. لا شيء منها يكلّف المستخدم، فيمتلئ السوق.", "One fee": "رسم واحد", "Free during launch": "مجاني خلال الإطلاق", "When an offer is accepted": "عند قبول العرض", "A single fee will unlock contact details for both sides. It is free now, while we build the marketplace, and switches on once Qatar is live. No listing fees, no subscriptions, no commission on goods we never touch.": "رسم واحد يكشف بيانات التواصل للطرفين. مجاني الآن بينما نبني السوق، ويُفعَّل عند انطلاق قطر. لا رسوم عرض، ولا اشتراكات، ولا عمولة على أغراض لا نلمسها.", "Revenue follows accepted swaps": "الإيراد يتبع المبادلات المقبولة", "Drag the volume. The fee is free today and a placeholder until pricing is final.": "اسحب الحجم. الرسم مجاني اليوم، والقيمة تقديرية حتى يُعتمد التسعير.", "Accepted swaps a month": "مبادلات مقبولة في الشهر", "Fee per accepted swap": "الرسم لكل مبادلة مقبولة", "a month ·": "في الشهر ·", "a year · illustrative only": "في السنة · للتوضيح فقط", "Signed partnership": "شراكة موقّعة", "Yala Swap goes inside Mzad Qatar.": "يلا سواب داخل مزاد قطر.", "Mzad Qatar is Qatar's premier classifieds and marketplace platform, established in 2012 and the first comprehensive one in the country. A signed partnership puts swapping inside it: every Mzad listing can take a swap offer, and every Mzad user becomes a Yala Swap user without a new download.": "مزاد قطر هو المنصة الأولى للإعلانات المبوبة والسوق في قطر، تأسس عام 2012 وهو الأول الشامل في البلاد. شراكة موقّعة تضع المبادلة بداخله: كل إعلان في مزاد يمكنه استقبال عرض مبادلة، وكل مستخدم في مزاد يصبح مستخدماً في يلا سواب دون تحميل جديد.", "Established 2012": "تأسس 2012", "Qatar's first comprehensive online classifieds platform, spanning vehicles, real estate, electronics and more.": "أول منصة إعلانات مبوبة شاملة في قطر، تغطي السيارات والعقارات والإلكترونيات وغيرها.", "Complete ecosystem": "منظومة متكاملة", "Secure payments, mobile apps for iOS and Android, and a robust user verification system.": "مدفوعات آمنة، وتطبيقات iOS وأندرويد، ونظام قوي للتحقق من المستخدمين.", "iOS and Android downloads": "تحميلات iOS وأندرويد", "ads a month": "إعلان في الشهر", "active users": "مستخدم نشط", "ad views a month": "مشاهدة إعلان في الشهر", "More listings": "إعلانات أكثر", "Mzad's 104K new ads a month become swappable on day one. Yala Swap starts with a full marketplace instead of an empty one.": "104 آلاف إعلان جديد شهرياً في مزاد تصبح قابلة للمبادلة من اليوم الأول. يلا سواب يبدأ بسوق ممتلئ لا فارغ.", "More users": "مستخدمون أكثر", "1.42 million active users get a Swap button on the listings they already use. No new app, no new account.": "1.42 مليون مستخدم نشط يحصلون على زر مبادلة في الإعلانات التي يستخدمونها أصلاً. لا تطبيق جديد، ولا حساب جديد.", "More visits": "زيارات أكثر", "269 million ad views a month, each one a chance to swap. Yala Swap rides the traffic Qatar's biggest marketplace already has.": "269 مليون مشاهدة إعلان شهرياً، كل واحدة فرصة للمبادلة. يلا سواب يركب الزيارات التي يملكها أكبر سوق في قطر.", "Where it runs": "أين يعمل", "Built once for everywhere people are.": "بُني مرة واحدة لكل مكان يتواجد فيه الناس.", "iPhone": "آيفون", "Native SwiftUI app": "تطبيق SwiftUI أصلي", "Android": "أندرويد", "Native Compose app": "تطبيق Compose أصلي", "Web": "الويب", "The full marketplace in a browser": "السوق كاملاً في المتصفح", "Arabic and English throughout, right-to-left done properly. Every market is separated at the data layer, so each new Gulf or MENA country is a switch, not a rebuild.": "عربي وإنجليزي في كل مكان، مع دعم صحيح للاتجاه من اليمين لليسار. كل سوق مفصول على مستوى البيانات، فكل دولة خليجية أو عربية جديدة هي مفتاح، لا إعادة بناء.", "Where the story goes": "إلى أين تمضي القصة", "Qatar first. The Gulf and MENA next.": "قطر أولاً. ثم الخليج والمنطقة العربية.", "Four chapters. Each one makes the last one worth more.": "أربعة فصول. كل فصل يزيد قيمة الذي قبله.", "Chapter 1 · now": "الفصل 1 · الآن", "Qatar launch": "إطلاق قطر", "All 18 categories live on three platforms, offers, negotiation and the contact fee in place.": "18 فئة على ثلاث منصات، مع العروض والتفاوض ورسم التواصل.", "The foundation": "الأساس", "Chapter 2": "الفصل 2", "Live inside Mzad Qatar": "داخل مزاد قطر", "The signed partnership ships: a Swap button on Mzad listings, shared accounts, and Mzad's inventory open to offers.": "تنفيذ الشراكة الموقّعة: زر مبادلة في إعلانات مزاد، وحسابات مشتركة، ومخزون مزاد مفتوح للعروض.", "The supply engine": "محرك العرض", "Chapter 3": "الفصل 3", "Trusted swaps": "مبادلات موثوقة", "Verified profiles, ratings after every completed swap, and a dispute path that both sides trust.": "ملفات موثّقة، وتقييم بعد كل مبادلة مكتملة، ومسار نزاع يثق به الطرفان.", "The repeat engine": "محرك التكرار", "Chapter 4": "الفصل 4", "The Gulf, then MENA": "الخليج، ثم المنطقة العربية", "Saudi, UAE, Kuwait, Bahrain, Oman first, then Egypt, Jordan and the wider Arabic-speaking region. Same product, a new market switch, local payment rails.": "السعودية والإمارات والكويت والبحرين وعُمان أولاً، ثم مصر والأردن والمنطقة العربية الأوسع. نفس المنتج، مفتاح سوق جديد، وقنوات دفع محلية.", "The scale chapter": "فصل التوسّع", "Three co-founders. Business, product, and growth.": "ثلاثة مؤسسين. الأعمال والمنتج والنمو.", "Built in Doha by people who already run marketplaces for Qatar's buyers and sellers.": "بُني في الدوحة على يد أشخاص يديرون أصلاً أسواقاً للبائعين والمشترين في قطر.", "Mohammed Dawoud": "محمد داود", "Co-founder & CBO": "شريك مؤسس ورئيس الأعمال", "Leads the business.": "يقود الأعمال.", "Mohammed Abdulfattah": "محمد عبد الفتاح", "Co-founder & CTO": "شريك مؤسس ورئيس التقنية", "Leads the product and engineering.": "يقود المنتج والهندسة.", "Fahad Al Naimi": "فهد النعيمي", "Co-founder & CMO": "شريك مؤسس ورئيس التسويق", "Leads growth.": "يقود النمو.", "One round. Plain terms.": "جولة واحدة. شروط واضحة.", "Seed round, proposed terms. Enough to win Qatar and open the first Gulf market.": "جولة تأسيسية، شروط مقترحة. تكفي لكسب قطر وفتح أول سوق خليجي.", "Round": "الجولة", "on one SAFE note": "على سند SAFE واحد", "Valuation cap": "سقف التقييم", "post-money, fixed": "بعد الاستثمار، ثابت", "Instrument": "الأداة", "one signature, plain terms": "توقيع واحد، شروط واضحة", "Growth": "النمو", "Working capital": "رأس المال العامل", "Use of funds · 18 months of runway · proposed terms": "استخدام الأموال · 18 شهراً من التشغيل · شروط مقترحة", "Next chapter": "الفصل التالي", "Trading things should be as easy as selling them.": "مبادلة الأشياء يجب أن تكون بسهولة بيعها.", "We are raising $500k on one SAFE at a $5M post-money cap. Here is what a seat costs and what it buys.": "نجمع 500 ألف دولار على سند SAFE واحد بسقف تقييم 5 ملايين دولار بعد الاستثمار. هذا ما يكلّفه المقعد وما يشتريه.", "Minimum ticket": "الحد الأدنى للمشاركة", "on the same SAFE, same cap for every investor": "على نفس السند، ونفس السقف لكل مستثمر", "What $100k buys": "ما يشتريه 100 ألف دولار", "of Yala Swap at the $5M cap, converting at the next round": "من يلا سواب بسقف 5 ملايين دولار، يتحول في الجولة التالية", "Closing": "الإغلاق", "30 days": "30 يوماً", "from the first signature; seats held in order of commitment": "من التوقيع الأول؛ المقاعد محجوزة بترتيب الالتزام", "Company": "الشركة", "Based in": "المقر", "Doha, Qatar": "الدوحة، قطر", "Contact": "التواصل", "Mohammed Dawoud, Co-founder & CBO": "محمد داود، شريك مؤسس ورئيس الأعمال", "Email": "البريد", "Mobile": "الجوال", "Private and confidential. Prepared by Yala Swap. Please do not forward without written consent.": "خاص وسري. أعدّه يلا سواب. يرجى عدم إعادة الإرسال دون موافقة خطية.", "Yala Swap home screen on iPhone: category tiles and fresh swaps near you": "الشاشة الرئيسية ليلا سواب على آيفون", "A swap offer on iPhone: you give a PlayStation 5, you get a Land Cruiser, plus QAR 800": "عرض مبادلة على آيفون", "Step 1 on iPhone: pick what you will offer from your items": "الخطوة 1 على آيفون: اختر ما ستقدّمه", "Mzad Qatar app: home and bidding screens on iPhone": "تطبيق مزاد قطر على آيفون"};
+  const EN = Object.fromEntries(Object.entries(AR).map(([k, v]) => [v, k]));
+  const norm = t => t.replace(/\s+/g, ' ').trim();
+  const walk = (dict) => {
+    const it = document.createNodeIterator(document.body, NodeFilter.SHOW_TEXT, { acceptNode: n => (n.parentElement.closest('script,style') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT) });
+    let n; while ((n = it.nextNode())) { const k = norm(n.textContent); if (k && dict[k] !== undefined) n.textContent = n.textContent.replace(k, dict[k]); }
+    document.querySelectorAll('img[alt]').forEach(i => { const k = norm(i.alt); if (dict[k]) i.alt = dict[k]; });
+  };
+  let lang = 'en';
+  try { lang = localStorage.getItem('ys.lang') || 'en'; } catch (e) {}
+  const setLang = (l) => {
+    const toAr = l === 'ar';
+    walk(toAr ? AR : EN);
+    document.documentElement.lang = toAr ? 'ar' : 'en'; document.documentElement.dir = toAr ? 'rtl' : 'ltr';
+    document.getElementById('lang').textContent = toAr ? 'English' : 'عربي';
+    document.title = toAr ? 'قصة يلا سواب للمستثمرين' : 'Yala Swap Investor Story';
+    try { localStorage.setItem('ys.lang', l); } catch (e) {}
+  };
+  document.getElementById('lang').addEventListener('click', () => setLang(document.documentElement.dir === 'rtl' ? 'en' : 'ar'));
+  if (lang === 'ar') setLang('ar');
   // Reveal on scroll, from a visible resting state when motion is reduced.
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: .15 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
@@ -503,7 +539,7 @@
   }
 
   // Numbers count up the first time they scroll into view.
-  const counters = [...document.querySelectorAll('.market b, .plats b, .ask b, .ticket b, .stat b')].filter(b => /\d/.test(b.textContent));
+  const counters = [...document.querySelectorAll('.market b, .plats b, .ask b, .ticket b, .stat b, .gains b')].filter(b => /\d/.test(b.textContent));
   const cio = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return; cio.unobserve(e.target);
     const el = e.target; const html = el.innerHTML; const m = el.textContent.match(/([^\d]*)([\d,.]+)(.*)/s); if (!m) return;
@@ -523,7 +559,7 @@
   const nio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-40% 0px -55% 0px' });
   secs.forEach(s => nio.observe(s));
 
-  const fmt = n => 'QAR ' + Number(n).toLocaleString('en');
+  const fmt = n => '$' + Number(n).toLocaleString('en');
 
   // Revenue calculator.
   const swaps = document.getElementById('swaps'), fee = document.getElementById('fee');
