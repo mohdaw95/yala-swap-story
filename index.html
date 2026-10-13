@@ -163,8 +163,9 @@
   .berry-bg .row p{opacity:.88}
 
   /* platforms + market */
-  .plats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:36px}
-  @media(max-width:760px){.plats{grid-template-columns:1fr 1fr}}
+  .plats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
+  #mzad .plats{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:760px){.plats,#mzad .plats{grid-template-columns:1fr 1fr}}
   .plats div{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--card)}
   .plats b{display:block;font-weight:800;font-size:17px}
   .plats span{font-size:13px;color:var(--muted)}
@@ -242,7 +243,7 @@
       Yala Swap
     </a>
     <div class="links" id="links">
-      <a href="#story">Story</a><a href="#market">Market</a><a href="#product">Product</a><a href="#model">Model</a><a href="#mzad">Mzad Qatar</a><a href="#moat">Moat</a><a href="#roadmap">Roadmap</a><a href="#team">Team</a><a href="#ask">The ask</a>
+      <a href="#story">Story</a><a href="#market">Market</a><a href="#product">Product</a><a href="#model">Model</a><a href="#mzad">Mzad Qatar</a><a href="#roadmap">Roadmap</a><a href="#team">Team</a><a href="#ask">The ask</a>
     </div>
     <a class="cta" href="#ask">Talk to us</a>
   </div>
@@ -380,19 +381,7 @@
   </div>
 </section>
 
-<!-- moat -->
-<section id="moat" class="berry-bg">
-  <div class="wrap reveal">
-    <span class="eyebrow">What protects it</span>
-    <h2>A fee at the handshake only works if the handshake can't move off-platform.</h2>
-    <p class="lead">Every marketplace that charges for contact leaks the same way: someone pastes a phone number into a message box. We designed that box out of existence.</p>
-    <div class="rows">
-      <div class="row"><h3>Offers carry items, not words</h3><p>An offer is a set of items and an optional amount. There is no free-text field to hide a number in, not in offers and not in counter-offers.</p></div>
-      <div class="row"><h3>Questions are public and filtered</h3><p>Questions on an ad are visible to everyone, so there is no private channel. Phone numbers and social handles are rejected in Arabic and English alike.</p></div>
-      <div class="row"><h3>Enforced in the database</h3><p>The rules live in the backend, not only in the interface. Bypassing the app does not bypass the rule.</p></div>
-    </div>
-  </div>
-</section>
+
 
 <!-- platforms -->
 <section class="tint">
@@ -403,7 +392,6 @@
       <div><b>iPhone</b><span>Native SwiftUI app</span></div>
       <div><b>Android</b><span>Native Compose app</span></div>
       <div><b>Web</b><span>The full marketplace in a browser</span></div>
-      <div><b>Operations</b><span>Console for moderation, categories and support</span></div>
     </div>
     <p class="lead" style="margin-top:28px">Arabic and English throughout, right-to-left done properly. Every market is separated at the data layer, so each new Gulf or MENA country is a switch, not a rebuild.</p>
   </div>
